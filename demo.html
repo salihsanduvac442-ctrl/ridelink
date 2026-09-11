@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RideLink Canlı Demo — Sürüş Grubu</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo-shell">
+    <div class="demo-topbar">
+      <div class="logo">RideLink<span style="color:#c85a2e">.</span></div>
+      <a href="index.html">← Ana sayfaya dön</a>
+    </div>
+
+    <div class="panel">
+      <h2>Sürüş Grubu Demosu</h2>
+      <p class="sub">
+        Gerçek zamanlı, tarayıcılar arası WebRTC sesli bağlantı. Aynı grup kodunu
+        iki farklı cihaz veya sekmede açarak birbirinizi gerçekten duyabilirsiniz.
+        Mikrofon izni isteyecektir.
+      </p>
+      <div class="join-row" id="joinRow">
+        <input id="roomCode" type="text" placeholder="GRUP KODU (ör. ISTANBUL1)" maxlength="16">
+        <button class="btn btn-primary" id="joinBtn">Gruba Katıl</button>
+      </div>
+      <div id="statusArea" style="margin-top:14px; display:none;">
+        <span class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">Bağlanıyor…</span></span>
+      </div>
+    </div>
+
+    <div class="panel" id="alertPanel" style="display:none;">
+      <div class="alert-banner" id="alertBanner">🚨 Kaza bildirimi gönderildi (demo) — grup üyeleri bilgilendirildi.</div>
+      <div class="control-row">
+        <button class="btn btn-mute" id="muteBtn">🎙️ Sesi Kapat</button>
+        <button class="btn btn-danger" id="sosBtn">🚨 Kaza Bildir</button>
+        <button class="btn btn-leave" id="leaveBtn">Gruptan Ayrıl</button>
+      </div>
+    </div>
+
+    <div class="panel" id="membersPanel" style="display:none;">
+      <h2>Gruptakiler</h2>
+      <p class="sub">Grup kodunu bilen herkes otomatik olarak sesli bağlanır.</p>
+      <div class="member-list" id="memberList"></div>
+    </div>
+
+    <div class="panel" id="mapPanel" style="display:none;">
+      <h2>Canlı Konumun</h2>
+      <p class="sub">Tarayıcı konum izni verirsen kendi konumun burada görünür (demo: sadece kendi cihazın).</p>
+      <div id="map"></div>
+    </div>
+
+    <div class="panel" id="logPanel" style="display:none;">
+      <h2>Bağlantı Günlüğü</h2>
+      <div class="log" id="logBox"></div>
+    </div>
+
+    <audio id="remoteAudioContainer" hidden></audio>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.2/peerjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
