@@ -8,15 +8,15 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="nav">
+  <div class="nav" id="nav">
     <div class="logo">RideLink<span>.</span></div>
     <a class="cta" href="demo.html">Canlı Demo'yu Dene</a>
   </div>
 
   <section class="hero">
-    <div>
+    <div data-reveal>
       <span class="eyebrow">Motosiklet · Grup Sürüşü · Güvenlik</span>
-      <h1>Markanı değiştir, ekibini değiştirme.</h1>
+      <h1>Markanı değiştir,<br>ekibini değiştirme.</h1>
       <p class="lead">
         RideLink; telefon numarası, bağlantı ya da QR koduyla saniyeler içinde
         sürüş grubu kurmanı sağlar. Hangi interkom markasını kullandığınız
@@ -28,16 +28,16 @@
         <a class="btn btn-secondary" href="#nasil">Nasıl Çalışır</a>
       </div>
     </div>
-    <div class="hero-card">
+    <div class="hero-card" data-reveal>
       <img src="assets/hero.svg" alt="RideLink grup sürüşü örnek görseli">
       <div class="cap">Marka bağımsız grup sürüş iletişimi — örnek görsel.</div>
     </div>
   </section>
 
   <section class="section" id="nasil">
-    <h2>Nasıl çalışır</h2>
-    <p class="sub">Mevcut interkom markanız ne olursa olsun RideLink üstte çalışır.</p>
-    <div class="grid3">
+    <h2 data-reveal>Nasıl çalışır</h2>
+    <p class="sub" data-reveal>Mevcut interkom markanız ne olursa olsun RideLink üstte çalışır.</p>
+    <div class="grid3" data-reveal="stagger">
       <div class="card">
         <div class="icon">🔗</div>
         <h3>1. Grup kodu paylaş</h3>
@@ -56,29 +56,47 @@
     </div>
   </section>
 
-  <section class="section" style="background:#eef1f4;">
-    <h2>Neden marka bağımsız?</h2>
-    <p class="sub">Grup arkadaşların farklı interkom markaları kullanıyor olabilir — sorun değil.</p>
-    <div class="grid3">
-      <div class="card"><h3>📡 Herhangi bir kulaklıkla</h3><p>Bluetooth ses cihazın varsa RideLink ile grup sesli iletişime katılabilirsin.</p></div>
-      <div class="card"><h3>🧭 Canlı rota & konum</h3><p>Grubun nerede olduğunu her an gör, kaybolan arkadaşını kolayca bul.</p></div>
-      <div class="card"><h3>🚨 Kaza bildirimi</h3><p>Ani durma veya çarpışma algılandığında gruba ve seçtiğin kişilere anında haber gider.</p></div>
-      <div class="card"><h3>📶 İnternet olmasa da</h3><p>Mümkün olan yerlerde Bluetooth / Wi-Fi Direct ile bağlantı devam eder.</p></div>
+  <section class="section alt">
+    <h2 data-reveal>Neden marka bağımsız?</h2>
+    <p class="sub" data-reveal>Grup arkadaşların farklı interkom markaları kullanıyor olabilir — sorun değil.</p>
+    <div class="grid4" data-reveal="stagger">
+      <div class="card"><div class="icon">📡</div><h3>Herhangi bir kulaklıkla</h3><p>Bluetooth ses cihazın varsa RideLink ile grup sesli iletişime katılabilirsin.</p></div>
+      <div class="card"><div class="icon">🧭</div><h3>Canlı rota & konum</h3><p>Grubun nerede olduğunu her an gör, kaybolan arkadaşını kolayca bul.</p></div>
+      <div class="card"><div class="icon">🚨</div><h3>Kaza bildirimi</h3><p>Ani durma veya çarpışma algılandığında gruba ve seçtiğin kişilere anında haber gider.</p></div>
+      <div class="card"><div class="icon">📶</div><h3>İnternet olmasa da</h3><p>Mümkün olan yerlerde Bluetooth / Wi-Fi Direct ile bağlantı devam eder.</p></div>
     </div>
   </section>
 
   <section class="section">
-  <h2>Kimler için</h2>
-    <p class="sub">Tek başına sürenler için değil, birlikte sürenler için.</p>
-    <div class="grid3">
-      <div class="card"><h3>🏍️ Grup turları</h3><p>Hafta sonu sürüşlerinde herkes birbirini duysun.</p></div>
-      <div class="card"><h3>🛵 Kurye & filo ekipleri</h3><p>Saha ekiplerinin birbiriyle ve merkezle anlık iletişimi.</p></div>
-      <div class="card"><h3>🏁 Kulüpler & etkinlikler</h3><p>Büyük gruplu sürüşlerde koordinasyon ve güvenlik.</p></div>
+    <h2 data-reveal>Kimler için</h2>
+    <p class="sub" data-reveal>Tek başına sürenler için değil, birlikte sürenler için.</p>
+    <div class="grid3" data-reveal="stagger">
+      <div class="card"><div class="icon">🏍️</div><h3>Grup turları</h3><p>Hafta sonu sürüşlerinde herkes birbirini duysun.</p></div>
+      <div class="card"><div class="icon">🛵</div><h3>Kurye & filo ekipleri</h3><p>Saha ekiplerinin birbiriyle ve merkezle anlık iletişimi.</p></div>
+      <div class="card"><div class="icon">🏁</div><h3>Kulüpler & etkinlikler</h3><p>Büyük gruplu sürüşlerde koordinasyon ve güvenlik.</p></div>
     </div>
   </section>
 
   <footer>
     RideLink — bu sayfa erken aşama bir MVP demosudur. Görseller örnek amaçlıdır. Canlı demo, tarayıcılar arası gerçek WebRTC sesli bağlantı kullanır.
   </footer>
+
+  <script>
+    var navEl = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      navEl.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  </script>
 </body>
 </html>
