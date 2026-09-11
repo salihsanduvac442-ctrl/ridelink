@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2a4a"/>
+      <stop offset="1" stop-color="#3a5a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#sky)"/>
+  <circle cx="1300" cy="180" r="90" fill="#ffe9a8" opacity="0.9"/>
+  <rect y="700" width="1600" height="300" fill="#23252b"/>
+  <rect y="760" width="1600" height="10" fill="#e8c877" opacity="0.6"/>
+  <g stroke="#e8c877" stroke-width="10" stroke-dasharray="60 40" opacity="0.6">
+    <line x1="0" y1="850" x2="1600" y2="850"/>
+  </g>
+  <!-- motorcycle silhouette -->
+  <g transform="translate(560,560)">
+    <circle cx="0" cy="260" r="70" fill="none" stroke="#f3e9d8" stroke-width="14"/>
+    <circle cx="420" cy="260" r="70" fill="none" stroke="#f3e9d8" stroke-width="14"/>
+    <path d="M0 260 L160 160 L260 260 L420 260" fill="none" stroke="#f3e9d8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M160 160 L200 60 L280 60" fill="none" stroke="#f3e9d8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M260 260 L300 120 L380 120" fill="none" stroke="#c85a2e" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="300" cy="70" r="34" fill="#f3e9d8"/>
+    <path d="M300 70 a34 34 0 0 1 34 -18" fill="none" stroke="#23252b" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <!-- second rider, group -->
+  <g transform="translate(980,600)" opacity="0.75">
+    <circle cx="0" cy="220" r="58" fill="none" stroke="#8fb7e8" stroke-width="12"/>
+    <circle cx="340" cy="220" r="58" fill="none" stroke="#8fb7e8" stroke-width="12"/>
+    <path d="M0 220 L130 135 L210 220 L340 220" fill="none" stroke="#8fb7e8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="240" cy="70" r="28" fill="#8fb7e8"/>
+  </g>
+  <text x="800" y="960" font-family="Arial" font-size="24" fill="#ffffff99" text-anchor="middle">ÖRNEK GÖRSEL — RideLink</text>
+</svg>
